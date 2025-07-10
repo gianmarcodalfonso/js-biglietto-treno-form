@@ -9,10 +9,10 @@ sendBtn.addEventListener(`click`, (e) => {
   const kmPrice = 0.21;
   const tripPrice = userKm * kmPrice;
   console.log(`Costo del viaggio: ${tripPrice.toFixed(2)}€;`);
-
+  let tripDiscounted = tripPrice;
   if (userAge < 18 || userAge >= 65) {
   console.log(`Hai diritto ad uno sconto;`);
-  let tripDiscounted;
+  
 
   if(userAge < 18) {
     console.log(`Sconto applicabile del: 20%;`)
@@ -23,7 +23,11 @@ sendBtn.addEventListener(`click`, (e) => {
     console.log(`Sconto applicabile del: 40%`)
     tripDiscounted = (tripPrice / 100) * 60;
   }
-
-  console.log(`Dovrai pagare: ${tripDiscounted.toFixed(2)}€;`)
   }
-})
+  console.log(`Dovrai pagare: ${tripDiscounted.toFixed(2)}€;`)
+  
+  document.getElementById(`show-userKm`).innerText = userKm
+  document.getElementById(`show-userAge`).innerText = userAge
+  document.getElementById(`show-tripPrice`).innerText = tripPrice.toFixed(2)
+  document.getElementById(`show-tripDiscounted`).innerText = tripDiscounted.toFixed(2)
+} )
