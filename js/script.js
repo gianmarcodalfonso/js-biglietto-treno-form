@@ -1,6 +1,4 @@
 const sendBtn = document.getElementById(`send`)
-
-
 sendBtn.addEventListener(`click`, (e) => {
   e.preventDefault()
 
@@ -8,11 +6,12 @@ sendBtn.addEventListener(`click`, (e) => {
   const userAge = document.getElementById(`age`).value
   const kmPrice = 0.21;
   const tripPrice = userKm * kmPrice;
+  let subTotal = document.getElementById(`subTotal`)
   console.log(`Costo del viaggio: ${tripPrice.toFixed(2)}€;`);
   let tripDiscounted = tripPrice;
   if (userAge < 18 || userAge >= 65) {
   console.log(`Hai diritto ad uno sconto;`);
-  
+  subTotal.classList.remove(`d-none`)
 
   if(userAge < 18) {
     console.log(`Sconto applicabile del: 20%;`)
