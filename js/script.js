@@ -2,6 +2,8 @@ const sendBtn = document.getElementById(`send`)
 sendBtn.addEventListener(`click`, (e) => {
   e.preventDefault()
 
+  const passengerName = document.getElementById(`passengerName`).value
+  const tripDate = document.getElementById(`tripDate`).value
   const userKm = document.getElementById(`trip`).value
   const userAge = document.getElementById(`age`).value
   const kmPrice = 0.21;
@@ -25,6 +27,8 @@ sendBtn.addEventListener(`click`, (e) => {
   }
   console.log(`Dovrai pagare: ${tripDiscounted.toFixed(2)}€;`)
   
+  document.getElementById(`show-passengerName`).innerText = passengerName
+  document.getElementById(`show-tripDate`).innerText = tripDate
   document.getElementById(`show-userKm`).innerText = userKm
   document.getElementById(`show-userAge`).innerText = userAge
   document.getElementById(`show-tripPrice`).innerText = tripPrice.toFixed(2)

@@ -25,8 +25,8 @@
         <div class="col-12 col-md-6">
           <div class="box mt-3">
             <form action="">
-              <label for="name" class="form-label">Nome e cognome</label>
-              <input type="nome" name="nome" id="nome" class="form-control" placeholder="Inserisci nome e cognome">
+              <label for="passengerName" class="form-label">Nome e cognome</label>
+              <input type="text" name="passengerName" id="passengerName" class="form-control" placeholder="Inserisci nome e cognome">
             </form>
           </div>
         </div>
@@ -69,9 +69,11 @@
           <div class="box">
             <div class="card">
               <div class="card-header">
-                <h2>Costi</h2>
+                <h2>Riepilogo dati biglietto</h2>
               </div>
               <div class="card-body">
+                <p>Passeggero: <span id="show-passengerName"></span></p>
+                <p>Data: <span id="show-tripDate"></span></p>
                 <p>Km: <span id="show-userKm"></span></p>
                 <p>Et&agrave;: <span id="show-userAge"></span></p>
                 <p id="subTotal" class="d-none">Subtotale: <span id="show-tripPrice"></span>€</p>
